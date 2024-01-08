@@ -1,6 +1,7 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
+using WinUI.ViewModels;
 
 namespace WinUI;
 
@@ -9,5 +10,24 @@ namespace WinUI;
 /// </summary>
 public partial class App : Application
 {
+    public App()
+    {
+        
+    }
+
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        base.OnStartup(e);
+
+        IServiceCollection services = new ServiceCollection();
+
+        // register all services here
+
+        services.AddSingleton<PackTheStuffViewModel>();
+
+        IServiceProvider provider = services.BuildServiceProvider();
+
+        Ioc.Default.ConfigureServices(provider);
+    }
 }
 
