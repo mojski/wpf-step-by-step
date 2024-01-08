@@ -17,8 +17,4 @@
     <PackageReference Include="MvvmDialogs" Version="9.1.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>
