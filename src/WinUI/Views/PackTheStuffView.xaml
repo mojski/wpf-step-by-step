@@ -7,7 +7,8 @@
     Title="PackTheStuffView"
     Width="800"
     Height="450"
-    DataContext="{d:DesignInstance viewmo}"
+    d:DataContext="{d:DesignInstance viewModels:PackTheStuffViewModel,
+                                     IsDesignTimeCreatable=True}"
     mc:Ignorable="d">
     <Grid />
 </Window>

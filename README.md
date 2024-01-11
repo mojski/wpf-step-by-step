@@ -186,5 +186,12 @@ public InMemoryTripRepository()
 }
 ```
 
+# Step 5
+Register InMemoryTripRepository in App.xaml.cs On Startup method:
+
+```csharp
+services.AddSingleton<ITripRepository, InMemoryTripRepository>();
+```
+
 At the end solution should looks like this
 ![Alt text](assets/sln.png)

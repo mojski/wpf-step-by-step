@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
+using WinUI.Models.Services;
+using WinUI.Models.Trips.Interfaces;
 using WinUI.ViewModels;
 
 namespace WinUI;
@@ -24,7 +26,7 @@ public partial class App : Application
         // register all services here
 
         services.AddSingleton<PackTheStuffViewModel>();
-
+        services.AddSingleton<ITripRepository, InMemoryTripRepository>();
         IServiceProvider provider = services.BuildServiceProvider();
 
         Ioc.Default.ConfigureServices(provider);
