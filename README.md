@@ -187,4 +187,4 @@ public InMemoryTripRepository()
 ```
 
 At the end solution should looks like this
-![Alt text](aasets/sln.png)
+![Alt text](assets/sln.png)
