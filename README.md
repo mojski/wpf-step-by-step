@@ -37,3 +37,5 @@
 
 now our empty grid should look like this:
 ![Alt text](/assets/grid_01.png)
+
+# Step 2 
