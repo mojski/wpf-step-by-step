@@ -1,6 +1,8 @@
-﻿namespace WinUI.Models.Interfaces;
+﻿using WinUI.Models.Trips.Models;
 
-internal interface ITripRepository
+namespace WinUI.Models.Trips.Interfaces;
+
+public interface ITripRepository
 {
     // categories
     Task CreateItemCategoryAsync(TripItemCategory category);
@@ -13,4 +15,5 @@ internal interface ITripRepository
     // trips
     Task CreateTripItemList(TripItemList tripItemList);
     Task<IEnumerable<TripItemList>> GetTripItemListsAsync(int tripItemListId);
+    Task UpsertTripItemListAsync(TripItemList tripItemList);
 }
