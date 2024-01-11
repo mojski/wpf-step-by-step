@@ -15,5 +15,5 @@ public interface ITripRepository
     // trips
     Task CreateTripItemList(TripItemList tripItemList);
     Task<IEnumerable<TripItemList>> GetTripItemListsAsync(int tripItemListId);
-    Task UpsertTripItemListAsync(TripItemList tripItemList);
+    Task UpdateTripItemListAsync(TripItemList tripItemList);
 }

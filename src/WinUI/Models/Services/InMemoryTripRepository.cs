@@ -55,14 +55,14 @@ public InMemoryTripRepository()
 
     public async Task<IEnumerable<TripItemList>> GetTripItemListsAsync(int tripItemListId)
     {
-        return trips;
         await Task.CompletedTask;
+        return trips;
     }
 
     public async Task<IEnumerable<TripItem>> GetTripItemsAsync()
     {
-        return items;
         await Task.CompletedTask;
+        return items;
     }
 
     public Task UpdateTripItemListAsync(TripItemList tripItemList)

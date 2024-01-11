@@ -7,7 +7,50 @@
     Title="PackTheStuffView"
     Width="800"
     Height="450"
-    DataContext="{d:DesignInstance viewmo}"
+    d:DataContext="{d:DesignInstance viewModels:PackTheStuffViewModel,
+                                     IsDesignTimeCreatable=True}"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!--  lists  -->
+            <ColumnDefinition Width="Auto" />
+            <!--  selected list  -->
+            <ColumnDefinition Width="*" />
+            <!--  items  -->
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!--  top menu bar  -->
+            <RowDefinition Height="Auto" />
+            <!--  top tool bar  -->
+            <RowDefinition Height="Auto" />
+            <!--  data grid  -->
+            <RowDefinition Height="*" />
+            <!--  bottom status bar  -->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--  first row with 100 % width (column span =3) with three items  -->
+        <Menu
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3">
+            <MenuItem Header="File">
+                <MenuItem>
+                    <MenuItem.Header>
+                        <ContentPresenter Content="Load" />
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItem.Header>
+                        <ContentPresenter Content="Save" />
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItem.Header>
+                        <ContentPresenter Content="Save" />
+                    </MenuItem.Header>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+    </Grid>
 </Window>
