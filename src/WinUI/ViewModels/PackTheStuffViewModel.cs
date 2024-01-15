@@ -7,13 +7,12 @@ namespace WinUI.ViewModels;
 
 public partial class PackTheStuffViewModel : ObservableObject
 {
-    private readonly ITripRepository tripRepository;
 
-    [ObservableProperty] private TripItemViewModel selectedItem = default;
-    [ObservableProperty] private ObservableCollection<TripItemViewModel> items = new ();
+    [ObservableProperty] private TripItemListViewModel? selectedItem = default;
+    [ObservableProperty] private ObservableCollection<TripItemListViewModel> items = new ();
 
-    public PackTheStuffViewModel(ITripRepository tripRepository)
+    public PackTheStuffViewModel()
     {
-        this.tripRepository = tripRepository;
+        
     }
 }
