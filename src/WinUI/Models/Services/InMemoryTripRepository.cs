@@ -29,43 +29,43 @@ public InMemoryTripRepository()
     });
 }
 
-    public async Task CreateItemCategoryAsync(TripItemCategory category)
+    public async Task CreateItemCategoryAsync(TripItemCategory category, CancellationToken cancellation)
     {
         categories.Add(category);
         await Task.CompletedTask;
     }
 
-    public async Task CreateTripItemAsync(TripItem tripItem)
+    public async Task CreateTripItemAsync(TripItem tripItem, CancellationToken cancellation)
     {
         items.Add(tripItem);
         await Task.CompletedTask;
     }
 
-    public async Task CreateTripItemList(TripItemList tripItemList)
+    public async Task CreateTripItemList(TripItemList tripItemList, CancellationToken cancellation)
     {
         trips.Add(tripItemList);
         await Task.CompletedTask;
     }
 
-    public async Task<IEnumerable<TripItemCategory>> GetCategoriesAsync(int categoryId)
+    public async Task<IEnumerable<TripItemCategory>> GetCategoriesAsync(CancellationToken cancellation)
     {
         return categories;
         await Task.CompletedTask;
     }
 
-    public async Task<IEnumerable<TripItemList>> GetTripItemListsAsync(int tripItemListId)
+    public async Task<IEnumerable<TripItemList>> GetTripItemListsAsync(CancellationToken cancellation)
     {
         return trips;
         await Task.CompletedTask;
     }
 
-    public async Task<IEnumerable<TripItem>> GetTripItemsAsync()
+    public async Task<IEnumerable<TripItem>> GetTripItemsAsync(CancellationToken cancellation)
     {
         return items;
         await Task.CompletedTask;
     }
 
-    public Task UpdateTripItemListAsync(TripItemList tripItemList)
+    public Task UpdateTripItemListAsync(TripItemList tripItemList, CancellationToken cancellation)
     {
         var list = trips.FirstOrDefault(trip => trip.Id == tripItemList.Id);
 

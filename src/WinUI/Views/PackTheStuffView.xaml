@@ -4,10 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:WinUI.ViewModels"
     Title="PackTheStuffView"
     Width="800"
     Height="450"
-    d:DataContext="{d:DesignInstance viewModels:PackTheStuffViewModel,
+    d:DataContext="{d:DesignInstance viewmodels:PackTheStuffViewModel,
                                      IsDesignTimeCreatable=True}"
     mc:Ignorable="d">
     <Grid />
