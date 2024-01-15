@@ -17,8 +17,6 @@
             <ColumnDefinition Width="Auto" />
             <!--  selected list  -->
             <ColumnDefinition Width="*" />
-            <!--  items  -->
-            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <!--  top menu bar  -->
@@ -53,5 +51,18 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
+        <ToolBar
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3">
+            <Button Background="Gray">NewTripItem</Button>
+            <Button Background="Gray">NewCategory</Button>
+            <Button Background="Gray">NewList</Button>
+        </ToolBar>
+        <DataGrid
+            Grid.Row="2"
+            Grid.Column="0"
+            ItemsSource="{Binding Path=Items, Mode=OneWay}"
+            SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
     </Grid>
 </Window>

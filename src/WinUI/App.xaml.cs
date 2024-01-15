@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 using System.Windows;
 using WinUI.Models.Services;
 using WinUI.Models.Trips.Interfaces;
@@ -27,9 +28,12 @@ public partial class App : Application
 
         services.AddSingleton<PackTheStuffViewModel>();
         services.AddSingleton<ITripRepository, InMemoryTripRepository>();
+
+        var assembly = Assembly.GetExecutingAssembly();
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
         IServiceProvider provider = services.BuildServiceProvider();
 
         Ioc.Default.ConfigureServices(provider);
     }
 }
-
