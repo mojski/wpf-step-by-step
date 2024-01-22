@@ -33,5 +33,12 @@ public partial class PackTheStuffViewModel : ObservableObject
         var viewModel = new UpdateTripItemsListViewModel() { Item = emptyModel };
 
         var result = this.dialogService.ShowDialog(this, viewModel);
+
+        if(result is true)
+        {
+            // do sth
+        }
+
+        await Task.CompletedTask;
     }
 }
